@@ -7,6 +7,31 @@ import os
 from ultralytics import YOLO
 
 
+# Import packages
+from pathlib import Path
+import PIL
+import pandas as pd
+import streamlit as st
+
+# Local Modules
+import settings
+import helper
+
+# Setting page layout
+st.set_page_config(
+    page_title="Dyslexic Handwriting Correction Tool",
+    page_icon="ðŸ¤–",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# Main page heading
+st.title("Dyslexic Handwriting Correction Tool")
+
+# Sidebar
+st.sidebar.header("Image Upload")
+
+
 # Function to download the file from Google Drive
 @st.cache_resource()
 def download_file_from_drive(url, output):
@@ -50,29 +75,7 @@ else:
 
 
 
-# Import packages
-from pathlib import Path
-import PIL
-import pandas as pd
-import streamlit as st
 
-# Local Modules
-import settings
-import helper
-
-# Setting page layout
-st.set_page_config(
-    page_title="Dyslexic Handwriting Correction Tool",
-    page_icon="ðŸ¤–",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
-# Main page heading
-st.title("Dyslexic Handwriting Correction Tool")
-
-# Sidebar
-st.sidebar.header("Image Upload")
 
 # Model Options
 model_type = "Detection"
