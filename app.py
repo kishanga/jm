@@ -7,8 +7,8 @@ from ultralytics import YOLO
 
 
 # Local Modules
-import settings
-import helper
+#import settings
+#import helper
 
 # Setting page layout
 st.set_page_config(
