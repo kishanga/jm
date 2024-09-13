@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 from PIL import Image, ImageColor
 import os
-import tensorflow as tf
 from ultralytics import YOLO
 
 
