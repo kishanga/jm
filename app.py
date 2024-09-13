@@ -3,6 +3,8 @@ from pathlib import Path
 import PIL
 import pandas as pd
 import streamlit as st
+from ultralytics import YOLO
+
 
 # Local Modules
 import settings
