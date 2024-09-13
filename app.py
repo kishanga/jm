@@ -5,10 +5,9 @@ import pandas as pd
 import streamlit as st
 from ultralytics import YOLO
 
-
 # Local Modules
-#import settings
-#import helper
+import settings
+import helper
 
 # Setting page layout
 st.set_page_config(
@@ -38,8 +37,24 @@ dyslexic_letters_df = pd.read_csv('dyslexic_letters.csv')
 # Extract the 'Class' column as keys and 'Position' as values in a dictionary
 class_position_dict = dict(zip(dyslexic_letters_df['Class'], dyslexic_letters_df['Position']))
 
+
+import gdown
+# Function to download the file from Google Drive
+@st.cache_resource()
+def download_file_from_drive(url, output):
+    gdown.download(url, output, quiet=False)
+
+
+# Google Drive file link (shared link)
+file_url = 'https://drive.google.com/uc?id=15s8ScVQW8wGDBzG4QlTXXctbpXiSuVnb'
+output_file = 'model.pt'
+
 # Selecting Detection Or Segmentation
-model_path = "weights/model.pt" # Path(settings.DETECTION_MODEL)
+model_path = "model.pt" # Path(settings.DETECTION_MODEL)
+file_url = model_path
+
+download_file_from_drive(file_url, output_file)
+st.success('Model downloaded successfully!')
 
 # Load Pre-trained ML Model
 try:
