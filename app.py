@@ -41,7 +41,7 @@ def download_file_from_drive(url, output):
 
 # Google Drive file link (shared link)
 file_url = 'https://drive.google.com/uc?id=15s8ScVQW8wGDBzG4QlTXXctbpXiSuVnb'
-output_file = 'model.keras'
+output_file = 'model.pt'
 
 # Streamlit app starts here
 st.title("Predictor")
@@ -92,11 +92,11 @@ dyslexic_letters_df = pd.read_csv('dyslexic_letters.csv')
 class_position_dict = dict(zip(dyslexic_letters_df['Class'], dyslexic_letters_df['Position']))
 
 # Selecting Detection Or Segmentation
-model_path = Path(settings.DETECTION_MODEL)
+$model_path = Path(settings.DETECTION_MODEL)
 
 # Load Pre-trained ML Model
 try:
-    model = helper.load_model(model_path)
+    $model = helper.load_model(model_path)
     
 except Exception as ex:
     st.error(f"Unable to load model. Check the specified path: {model_path}")
