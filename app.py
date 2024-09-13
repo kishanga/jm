@@ -37,7 +37,7 @@ dyslexic_letters_df = pd.read_csv('dyslexic_letters.csv')
 class_position_dict = dict(zip(dyslexic_letters_df['Class'], dyslexic_letters_df['Position']))
 
 # Selecting Detection Or Segmentation
-model_path = Path(settings.DETECTION_MODEL)
+model_path = "weights/model.pt" # Path(settings.DETECTION_MODEL)
 
 # Load Pre-trained ML Model
 try:
