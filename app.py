@@ -1,11 +1,11 @@
 import streamlit as st
 import gdown
-from tensorflow.keras.models import load_model
 import pandas as pd
 import numpy as np
 from PIL import Image, ImageColor
 import os
 import tensorflow as tf
+from ultralytics import YOLO
 
 
 # Function to download the file from Google Drive
@@ -39,7 +39,7 @@ if os.path.exists(output_file):
     if file_size > 0:  # Ensuring the file is not empty
         try:
             with st.spinner('Loading model...'):
-                model = load_model(output_file)
+                model = YOLO(output_file)
                 st.success('Model loaded successfully!')
                 #st.write(model.summary())
         except OSError as e:
