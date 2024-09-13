@@ -90,14 +90,6 @@ class_position_dict = dict(zip(dyslexic_letters_df['Class'], dyslexic_letters_df
 # Selecting Detection Or Segmentation
 #model_path = Path(settings.DETECTION_MODEL)
 
-# Load Pre-trained ML Model
-try:
-    #model = helper.load_model(model_path)
-    
-except Exception as ex:
-    st.error(f"Unable to load model. Check the specified path: {model_path}")
-    st.error(ex)
-
 source_img = None
 
 source_img = st.sidebar.file_uploader(
