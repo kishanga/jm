@@ -3,3 +3,4 @@ pillow
 ultralytics
 opencv-python-headless
 yt_dlp
+gdown
